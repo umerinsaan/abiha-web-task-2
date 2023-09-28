@@ -1,0 +1,14 @@
+<div class="container mt-5">
+    <h1 class="display-4">Weather App</h1>
+    <div class="input-group mb-3">
+        <input type="text" [(ngModel)]="city" class="form-control" placeholder="Enter city">
+        <div class="input-group-append">
+            <button class="btn btn-primary" (click)="getWeather()">Get Weather</button>
+        </div>
+    </div>
+    <div *ngIf="weatherData" class="mt-4">
+        <h2 class="mb-3">Weather in {{ weatherData.name }}, {{ weatherData.sys.country }}</h2>
+        <p class="lead">Temperature: {{ weatherData.main.temp }}°C</p>
+        <p class="lead">Weather: {{ weatherData.weather[0].description }}</p>
+    </div>
+</div>
